@@ -14,37 +14,60 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $firstName = 'Gino';
-    $lastName = 'Paoli';
+    
+    $menuLinks = [
+        [
+            'name' => 'Characters',
+            'current' => false
+        ],
+        [
+            'name' => 'Comics',
+            'current' => true
+        ],
+        [
+            'name' => 'Movies',
+            'current' => false
+        ],
+        [
+            'name' => 'Tv',
+            'current' => false
+        ],
+        [
+            'name' => 'Games',
+            'current' => false
+        ],
+        [
+            'name' => 'Collectibles',
+            'current' => false
+        ],
+        [
+            'name' => 'Videos',
+            'current' => false
+        ],
+        [
+            'name' => 'Fans',
+            'current' => false
+        ],
+        [
+            'name' => 'News',
+            'current' => false
+        ],
+        [
+            'name' => 'Shop',
+            'current' => false
+        ],
+    ];
+    $comics = config('comics');
+    $menuItems = [];
+    $menuLinksDcComics = [];
+    $menuLinksShop = [];
+    $menuLinksDc = [];
+    $menuLinksSites = [];
 
-    /*
-        compact: crea un array associativo le cui chiavi sono le stringhe
-                 che mettiamo tra le parentesi, mentre i valori di tali
-                 chiavi sono i valori delle variabili con i nomi corrispondenti
-                 alle stringhe inserite
 
-        compact('firstName', 'lastName')
-         |                                     |
-         V                                     V
-
-         [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-         ]
-    */
-
-    /*
-        dd: vuol dire dump and die, cioè fai il var_dump (più carino però)
-            e poi stoppa l'esecuzione
-    */
-    // dd(compact('firstName', 'lastName'));
-
-    return view('welcome', [
-        'firstName' => $firstName,
-        'lastName' => $lastName,
-    ]);
-    // return view('welcome', compact('firstName', 'lastName'));
-});
+    return view('welcome', compact('menuLinks','comics','menuItems',
+                'menuLinksDcComics','menuLinksShop','menuLinksDc','menuLinksSites'));
+})->name('homePage');
 
 Route::get('/chi-siamo', function () {
     return view('subpages.about');

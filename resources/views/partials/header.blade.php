@@ -1,7 +1,7 @@
 <header>
     <nav>
         <figure>
-            <img src="{{ Vite::asset('resources/img/dc-logo.png')}}" alt="Logo" height="60">
+            <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="Logo" height="60">
         </figure>
         <ul>
             @foreach ($menuLinks as $element)
