@@ -58,10 +58,18 @@ Route::get('/', function () {
         ],
     ];
     $comics = config('comics');
-    $menuItems = [];
-    $menuLinksDcComics = [];
-    $menuLinksShop = [];
-    $menuLinksDc = [];
+    $menuItems = [
+
+    ];
+    $menuLinksDcComics = [
+
+    ];
+    $menuLinksShop = [
+
+    ];
+    $menuLinksDc = [
+        
+    ];
     $menuLinksSites = [
         [
             'name' => 'DC',
