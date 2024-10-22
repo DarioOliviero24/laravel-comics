@@ -62,7 +62,28 @@ Route::get('/', function () {
     $menuLinksDcComics = [];
     $menuLinksShop = [];
     $menuLinksDc = [];
-    $menuLinksSites = [];
+    $menuLinksSites = [
+        [
+            'name' => 'DC',
+            'link' => '#'
+        ],
+        [
+            'name' => 'MAD Magazine',
+            'link' => '#'
+        ],
+        [
+            'name' => 'DC Kids',
+            'link' => '#'
+        ],
+        [
+            'name' => 'DC Universe',
+            'link' => '#'
+        ],
+        [
+            'name' => 'DC Power Visa',
+            'link' => '#'
+        ]
+    ];
 
 
     return view('welcome', compact('menuLinks','comics','menuItems',
